@@ -24,7 +24,7 @@ task.spawn(function()
 	while task.wait() do
 		if state.SALEGIT and not state.SLAPPING then
 			for i,v in pairs(game.Players:GetPlayers()) do
-				if (hrp.Position - v.Character.HumanoidRootPart.Position).Magnitude < 3.8 and v ~= plr then
+				if (hrp.Position - v.Character.HumanoidRootPart.Position).Magnitude < 5.3 and v ~= plr then
 					--game.Workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
 					--local camSave = game:GetService("UserInputService").MouseBehavior
 					game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.LockCenter
