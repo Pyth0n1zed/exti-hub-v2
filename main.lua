@@ -4,10 +4,10 @@ local plr = game.Players.LocalPlayer
 local char = plr.Character
 local hum = char.Humanoid
 local hrp = char.HumanoidRootPart
---local HitboxThingy = require(game.ReplicatedStorage.Packages.RaycastHitboxV4)
+local HitboxThingy = require(game.ReplicatedStorage.Packages.RaycastHitboxV4)
 local hitboxnew = nil
 
---local slapAnim = hum:LoadAnimation(game.ReplicatedStorage.Assets.Animations:WaitForChild("SlapAnim",5))
+local slapAnim = hum:LoadAnimation(game.ReplicatedStorage.Assets.Animations:WaitForChild("SlapAnim",5))
 local state = {
 	SALEGIT = false,
 	SLAPNOW = false,
