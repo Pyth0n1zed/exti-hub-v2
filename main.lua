@@ -43,13 +43,14 @@ task.spawn(function()
 			
 			for i,v in pairs(char:GetChildren()) do
 				if v:FindFirstChild("Glove") then
-					hitboxnew = HitboxThingy.new(v:WaitForChild("Glove"))
+					--[[hitboxnew = HitboxThingy.new(v:WaitForChild("Glove"))
 					local temp = RaycastParams.new()
 					temp.FilterDescendantsInstances = {v.Parent}
 					temp.FilterType = Enum.RaycastFilterType.Exclude
 					hitboxnew.RaycastParams = temp
 					hitboxnew.Visualizer = false
 					hitboxnew:SetPoints(v.Glove,{Vector3.new(0.16599, -1.2180, 0.04300), Vector3.new(0.16599, -0.5699, 0.15399), Vector3.new(-0.3740, 1.10199, -0.1260), Vector3.new(-0.5759, -0.4550, 0.04199), Vector3.new(-0.7649, 0.30599, 0.12800), Vector3.new(-0.6589, -0.7730, -0.1340), Vector3.new(-0.6150, 0.64200, -0.1260), Vector3.new(-1.1230, -0.5979, -0.2450), Vector3.new(0.43799, 0.18099, -0.0970), Vector3.new(0.33000, -0.1209, 0.15399), Vector3.new(-0.2210, -0.4810, 0.12800), Vector3.new(-0.1049, 0.25999, 0.07400), Vector3.new(-0.2930, -0.8529, 0.09499), Vector3.new(0.01600, 1.10199, -0.1260), Vector3.new(-0.2930, -1.2180, -0.1389), Vector3.new(0.16599, -0.9100, 0.04300), Vector3.new(-0.7509, -1.0809, -0.3079), Vector3.new(-0.8949, -0.1599, -0.0049), Vector3.new(0.37799, 0.62900, -0.1040), Vector3.new(1.06099, 0.01799, -0.3210), Vector3.new(0.73799, 0.24600, -0.2700)})
+					]]
 					v.Equipped:Connect(function()
 						state.GLOVEEQUIPPED = true
 						state.GLOVE = v
@@ -94,9 +95,7 @@ task.spawn(function()
 					--game.Workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
 					--local camSave = game:GetService("UserInputService").MouseBehavior
 					--game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.LockCenter
-					local info = TweenInfo.new(0.05,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut,0,true)
-					--local tween = game:GetService("TweenService"):Create(game.Workspace.CurrentCamera, info, {CFrame = CFrame.new(game.Workspace.CurrentCamera.CFrame.Position,v.Character.HumanoidRootPart.Position)})
-					local tween2 = game:GetService("TweenService"):Create(hrp, info, {CFrame = CFrame.new(hrp.Position,Vector3.new((v.Character.HumanoidRootPart.Position-hrp.Position).X,0,(v.Character.HumanoidRootPart.Position-hrp.Position).Z).Unit)})
+					
 					--tween:Play()
 					--tween2:Play()
 					--slapAnim:Play()
@@ -121,8 +120,7 @@ task.spawn(function()
 					--game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.LockCenter
 					local info = TweenInfo.new(0.05,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut,0,true)
 					--local tween = game:GetService("TweenService"):Create(game.Workspace.CurrentCamera, info, {CFrame = CFrame.new(game.Workspace.CurrentCamera.CFrame.Position,v.Character.HumanoidRootPart.Position)})
-					local tween2 = game:GetService("TweenService"):Create(hrp, info, {CFrame = CFrame.new(hrp.Position,Vector3.new((v.Character.HumanoidRootPart.Position-hrp.Position).X,0,(v.Character.HumanoidRootPart.Position-hrp.Position).Z).Unit)})
-					--tween:Play()
+					
 					--tween2:Play()
 					--slapAnim:Play()
 					state.SLAPNOW = true
