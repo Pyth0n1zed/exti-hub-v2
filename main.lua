@@ -33,7 +33,7 @@ task.spawn(function()
 				--slapAnim:Play()
 				
 				task.wait(0.45)
-				hitboxnew:HitStop()
+				--hitboxnew:HitStop()
 				state.SLAPNOW = false
 				task.wait(state.GLOVE.Config.AttackCD.Value)
 				state.SLAPPING = false
