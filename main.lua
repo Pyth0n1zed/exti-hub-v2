@@ -4,10 +4,10 @@ local plr = game.Players.LocalPlayer
 local char = plr.Character
 local hum = char.Humanoid
 local hrp = char.HumanoidRootPart
-local HitboxThingy = require(game.ReplicatedStorage.Packages.RaycastHitboxV4)
+--local HitboxThingy = require(game.ReplicatedStorage.Packages.RaycastHitboxV4)
 local hitboxnew = nil
 
-local slapAnim = hum:LoadAnimation(game.ReplicatedStorage.Assets.Animations:WaitForChild("SlapAnim",5))
+--local slapAnim = hum:LoadAnimation(game.ReplicatedStorage.Assets.Animations:WaitForChild("SlapAnim",5))
 local state = {
 	SALEGIT = false,
 	SLAPNOW = false,
@@ -27,10 +27,10 @@ task.spawn(function()
 			--state.SLAPPING = false
 			if (not char:GetAttribute("Ragdolled")) and (not char:GetAttribute("Stunned")) and (not state.SLAPPING) then -- ALL ADAPTED FROM GLOVEINIT SCRIPT!!!!
 				state.SLAPPING = true	
-				hitboxnew:HitStart()
+				--hitboxnew:HitStart()
 				game.ReplicatedStorage.Remotes.Slap:FireServer(state.TARGET)
 				
-				slapAnim:Play()
+				--slapAnim:Play()
 				
 				task.wait(0.45)
 				hitboxnew:HitStop()
@@ -40,7 +40,7 @@ task.spawn(function()
 			end
 		end
 		if state.GLOVEINIT == false then
-				--[[ experimental
+			
 			for i,v in pairs(char:GetChildren()) do
 				if v:FindFirstChild("Glove") then
 					hitboxnew = HitboxThingy.new(v:WaitForChild("Glove"))
@@ -68,11 +68,11 @@ task.spawn(function()
 					v.Activated:Connect(function()
 						if state.SLAPPING == true or state.SLAPNOW then return end
 						state.SLAPPING = true	
-						hitboxnew:HitStart()
-						game.ReplicatedStorage.Remotes.Slap:FireServer(state.TARGET)
-						slapAnim:Play()
+						--hitboxnew:HitStart()
+						--game.ReplicatedStorage.Remotes.Slap:FireServer(state.TARGET)
+						--slapAnim:Play()
 						task.wait(0.45)
-						hitboxnew:HitStop()
+						--hitboxnew:HitStop()
 						state.SLAPNOW = false
 						task.wait(state.GLOVE.Config.AttackCD.Value)
 						state.SLAPPING = false
@@ -162,8 +162,5 @@ end)
 --exti:CreateButton(combatTab,"toggle","Slap Aura (legit)", "Auto slaps someone when theyre in range of your glove.", 2, function()
 	--state.SA = not state.SA
 --end,
-function()
-	state.SA = not state.SAL
-end)
 
 exti:FinishLoading()
