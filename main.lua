@@ -18,6 +18,7 @@ local state = {
 	GLOVEEQUIPPED = false,
 	GLOVE = nil,
 }
+
 task.spawn(function()
 	while task.wait() do
 		if state.SLAPNOW and state.GLOVEEQUIPPED and state.GLOVEINIT and not state.SLAPPING then
@@ -39,6 +40,7 @@ task.spawn(function()
 			end
 		end
 		if state.GLOVEINIT == false then
+				--[[ experimental
 			for i,v in pairs(char:GetChildren()) do
 				if v:FindFirstChild("Glove") then
 					hitboxnew = HitboxThingy.new(v:WaitForChild("Glove"))
@@ -77,6 +79,7 @@ task.spawn(function()
 					end)
 				end
 			end
+			]]
 		end
 	end
 end)
@@ -156,9 +159,9 @@ end,
 function()
 	state.SA = not state.SA
 end)
-exti:CreateButton(combatTab,"toggle","Slap Aura (legit)", "Auto slaps someone when theyre in range of your glove.", 2, function()
-	state.SA = not state.SA
-end,
+--exti:CreateButton(combatTab,"toggle","Slap Aura (legit)", "Auto slaps someone when theyre in range of your glove.", 2, function()
+	--state.SA = not state.SA
+--end,
 function()
 	state.SA = not state.SAL
 end)
